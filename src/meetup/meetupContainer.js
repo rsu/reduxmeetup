@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actionTypes from '../types';
 import MeetupPage from './meetupPage';
 
-const mapStateToProps = ({ memberReducer }) => ({ memberReducer });
+const mapStateToProps = ({ memberReducer }) => ({ ...memberReducer });
 
 const mapDispatchToProps = dispatch => ({
   onFetchMembers: () => {

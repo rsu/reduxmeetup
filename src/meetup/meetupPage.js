@@ -2,12 +2,8 @@ import React, { PropTypes, Component } from 'react';
 import { View, Text, ActivityIndicator, TouchableOpacity, FlatList, Image } from 'react-native';
 import _ from 'lodash';
 
-const MeetupPage = ({ memberReducer, onFetchMembers }) => {
+const MeetupPage = ({ isFetchingMembers, members, onFetchMembers }) => {
   const renderHeader = () => {
-    const {
-      isFetchingMembers
-    } = memberReducer;
-
     if (isFetchingMembers) {
       return <ActivityIndicator />
     }
@@ -37,7 +33,7 @@ const MeetupPage = ({ memberReducer, onFetchMembers }) => {
         {renderHeader()}
       </View>
       <FlatList style={{ flex: 1}}
-        data={memberReducer.members}
+        data={members}
         keyExtractor={keyExtractor}
         renderItem={renderMember}
       />
