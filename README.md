@@ -17,8 +17,10 @@ RUN
 react-native run-ios
 ```
 
-or
+OR
 
 ```
 react-native run-android
 ```
+
+Make sure you put your own meetup api key in the epic file: `memberFetchRequestEpic.js`
